@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 10-ai-financial-insights-platform
+server:
+  port: 8080
