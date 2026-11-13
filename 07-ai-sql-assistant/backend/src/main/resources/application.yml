@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 07-ai-sql-assistant
+server:
+  port: 8080
