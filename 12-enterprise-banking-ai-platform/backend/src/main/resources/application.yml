@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 12-enterprise-banking-ai-platform
+server:
+  port: 8080
