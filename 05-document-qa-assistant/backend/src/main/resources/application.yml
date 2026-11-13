@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 05-document-qa-assistant
+server:
+  port: 8080
