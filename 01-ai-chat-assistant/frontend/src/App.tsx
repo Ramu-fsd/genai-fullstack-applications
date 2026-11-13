@@ -1,0 +1,5 @@
+import {useState} from 'react';
+const API=import.meta.env.VITE_API_BASE_URL??'http://localhost:8080';
+export default function App(){const [message,setMessage]=useState('');const [reply,setReply]=useState('');const [busy,setBusy]=useState(false);
+async function send(){if(!message.trim())return;setBusy(true);try{const r=await fetch(`${API}/api/v1/chat`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message})});if(!r.ok)throw Error();setReply((await r.json()).reply)}catch{setReply('Backend unavailable. Start the Spring Boot service.')}finally{setBusy(false)}}
+return <main className="shell"><div className="header"><div><h1>AI Chat Assistant</h1><p className="muted">React + Java 21 + Spring Boot</p></div><span>01</span></div><section className="panel"><textarea className="field" rows={4} value={message} onChange={e=>setMessage(e.target.value)} placeholder="Ask a question..."/><button className="primary" disabled={busy||!message.trim()} onClick={()=>void send()}>{busy?'Thinking...':'Send message'}</button><div className="bubble">{reply||'Assistant response appears here.'}</div></section></main>}
