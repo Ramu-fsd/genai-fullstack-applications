@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 06-enterprise-knowledge-portal
+server:
+  port: 8080
