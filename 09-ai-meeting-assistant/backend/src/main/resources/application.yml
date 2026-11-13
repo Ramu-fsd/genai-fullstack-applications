@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: 09-ai-meeting-assistant
+server:
+  port: 8080
